@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M-Criminologia | Caixa de Sugestões</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <main class="sugestoes-container">
+    <h2 class="sugestoes-title">💡 Caixa de Sugestões</h2>
+    <p class="sugestoes-subtitle">Envie melhorias, reportes de erro ou feedback sobre a plataforma de treino.</p>
+
+    <form id="form-sugestao" class="form-sugestao">
+      <div class="form-group">
+        <label for="sug-nome">Nome do Agente:</label>
+        <input type="text" id="sug-nome" class="form-input" required placeholder="Digite seu nome">
+      </div>
+
+      <div class="form-group">
+        <label for="sug-texto">Sua Sugestão:</label>
+        <textarea id="sug-texto" class="form-textarea" required placeholder="Escreva aqui sua sugestão..."></textarea>
+      </div>
+
+      <button type="submit" class="btn-primary" style="width: 100%; padding: 12px; font-size: 1rem; cursor: pointer;">
+        Enviar Sugestão
+      </button>
+    </form>
+    
+    <div class="back-link-container">
+      <a href="index.html" class="back-link">← Voltar ao Início</a>
+    </div>
+  </main>
+   <script src="app.js"></script>
+</body>
+</html>

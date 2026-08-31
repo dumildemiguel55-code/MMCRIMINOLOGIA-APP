@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "153650886107",
+    "project_id": "protectu-91688",
+    "storage_bucket": "protectu-91688.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153650886107:android:b4e78416bc6415217fa3fe",
+        "android_client_info": {
+          "package_name": "app.protecttu"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALVNjYr6BYqahC7XppfD7XMGvp_JhfSOE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153650886107:android:58fbdeea88cd2cbb7fa3fe",
+        "android_client_info": {
+          "package_name": "criminolo.lid.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyALVNjYr6BYqahC7XppfD7XMGvp_JhfSOE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

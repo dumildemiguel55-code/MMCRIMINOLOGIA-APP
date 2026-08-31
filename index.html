@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MMCriminologia - Boas-Vindas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <main class="welcome-container">
+    
+    <!-- Cabeçalho com Logotipo -->
+    <header class="header-boas-vindas">
+      <div class="logo-container">
+        <img src="logo.png" alt="Logotipo MMCriminologia" class="app-logo" onerror="this.style.display='none'; document.getElementById('logo-texto').style.display='block';">
+        <h1 id="logo-texto" class="logo-texto-fallback" style="display: none;">MM<span>CRIMINOLOGIA</span></h1>
+      </div>
+
+      <span class="badge">Plataforma de Treino</span>
+      <h2>Seja bem-vindo, Criminólogo!</h2>
+      <p class="subtitulo">“Eduquem as crianças para não castigar os adultos.”</p>
+    </header>
+
+    <!-- Formulário com Nome e E-mail -->
+    <section class="card-login">
+      <!-- Formulário com Nome e E-mail -->
+  <h3>Identificação do Agente</h3>
+  <form id="form-login">
+    
+    <!-- Campo Nome -->
+    <div class="input-group">
+      <label for="nome-usuario">Nome completo ou ID de Agente:</label>
+      <input type="text" id="nome-usuario" placeholder="Ex: Criminólogo Silva" required autocomplete="name">
+    </div>
+
+    <!-- Campo E-mail -->
+    <div class="input-group">
+      <label for="email-usuario">E-mail corporativo ou pessoal:</label>
+      <input type="email" id="email-usuario" placeholder="agente@criminologia.com" required autocomplete="email">
+    </div>
+
+    <!-- BOTÃO DE SUBMISSÃO OBRIGATÓRIA -->
+    <button type="submit" id="btn-enter-training" class="btn-primary btn-start-training">
+      BORA TREINAR? ➔
+    </button>
+  </form>
+
+
+    </div>
+      </form>
+    </section>
+
+    <!-- Áreas de Estudo -->
+    <section class="secao-areas">
+      <h3>Áreas de Atuação e Estudo</h3>
+      <div class="grid-areas">
+        <article class="card-area">
+          <img src="b1e9c7dc8ca18f2f5465b4d4fb0177f0.jpg" alt="Tribunal Constitucional" class="img-area">
+          <div class="conteudo-area">
+            <h4>tribunalconstitucional.ao</h4>
+            <p>A Justiça Constitucional ao serviço da democracia, do Estado de Direito e da cidadania..</p>
+          </div>
+        </article>
+
+        <article class="card-area">
+          <img src="03ba31a3c34e1afe7e59c1985fb30a50.jpg" alt="LIVRARIAON" class="img-area">
+          <div class="conteudo-area">
+            <h4>scholar.google.com</h4>
+            <p>Baixe artigos e pesquisas sobre ciências </p>
+          </div>
+        </article>
+        <article class="card-area">
+          <img src="railway-station_1500x644.webp" alt="United Nations Office on Drugs and Crime" class="img-area">
+          <div class="conteudo-area">
+            <h4>United Nations Officeon Drugs and Crime</h4>
+            <p>As apreensões de armas automáticas aumentaram mais de quinze vezes em 2024 </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+<!-- Cole este link onde desejar na página principal -->
+<a href="sugestoes.html" class="btn-primary" style="display: inline-block; text-decoration: none; text-align: center;">
+  💡 Deixar uma Sugestão
+</a>
+  <script src="app.js"></script>
+</body>
+</html>

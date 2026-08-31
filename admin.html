@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M-Criminologia | Painel Administrativo</title>
+  <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+
+  <!-- TELA DE AUTENTICAÇÃO POR SENHA -->
+  <div id="modal-auth">
+    <div class="auth-box">
+      <h2>🔒 Acesso Restrito</h2>
+      <p>Introduza a senha de Administrador:</p>
+      <input type="password" id="senha-admin" placeholder="Digite a senha...">
+      <button onclick="validarAcessoAdmin()">Entrar no Painel</button>
+      <p id="erro-senha" style="color: #f85149; display: none; margin-top: 10px; font-weight: bold;">Senha incorreta!</p>
+    </div>
+  </div>
+
+  <!-- CONTEÚDO DO PAINEL -->
+  <div id="conteudo-painel" class="admin-container hidden">
+    <header class="admin-header">
+      <h1 class="admin-title">📊 Painel do Sistema</h1>
+      <a href="index.html" class="btn-sair">Sair do Painel</a>
+    </header>
+
+    <!-- Tabela de Usuários -->
+    <section class="admin-section">
+      <h2 class="admin-section-title">👥 Agentes Registrados (Histórico de Acesso)</h2>
+      <div class="table-responsive">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th style="width: 60px;">ID</th>
+              <th>Nome do Criminólogo</th>
+              <th>E-mail</th>
+              <th style="width: 200px;">Data e Hora</th>
+            </tr>
+          </thead>
+          <tbody id="tabela-agentes-body">
+            <!-- Injetado via JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+
+
+    <!-- Tabela de Sugestões -->
+    <section class="admin-section">
+      <h2 class="admin-section-title">💡 Sugestões Recebidas</h2>
+      <div class="table-responsive">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th style="width: 60px;">ID</th>
+              <th style="width: 200px;">Autor</th>
+              <th>Sugestão / Feedback</th>
+              <th style="width: 200px;">Data</th>
+            </tr>
+          </thead>
+          <tbody id="lista-sugestoes">
+            <!-- Injetado via JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

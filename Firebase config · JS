@@ -1,0 +1,107 @@
+/* ==========================================================================
+   M-CRIMINOLOGIA — LIGAÇÃO AO FIREBASE (FIRESTORE)
+   ==========================================================================
+   Este ficheiro é carregado como <script type="module">, por isso pode
+   usar "import". Ele fica responsável por:
+     1) Gravar a pontuação de cada agente na coleção "ranking_agentes"
+        do Firestore (chamado por app.js -> atualizarProgresso()).
+     2) Ouvir essa coleção em tempo real e avisar a página de Pontuações
+        sempre que houver uma alteração — vinda de QUALQUER dispositivo.
+
+   IMPORTANTE: substitui os valores abaixo pelos dados reais do teu
+   projeto Firebase (Consola Firebase > Definições do Projeto > Geral >
+   As tuas apps > Configuração do SDK). Os valores "AIzaSy..." e
+   "abcdef..." são exemplos truncados — não vão funcionar como estão.
+   ========================================================================== */
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import {
+  getFirestore,
+  collection,
+  doc,
+  setDoc,
+  onSnapshot,
+  increment,
+  arrayUnion,
+  serverTimestamp,
+} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";;
+
+// --------------------------------------------------------------------------
+// 1. CONFIGURAÇÃO DO TEU PROJETO FIREBASE
+//    (substitui pelos valores completos e reais do teu projeto)
+// --------------------------------------------------------------------------
+const firebaseConfig = {
+  apiKey: "AIzaSyCEEavcnz...", // Substitui este trecho com o valor completo exato da tua tela
+  authDomain: "mmcriminologia.firebaseapp.com",
+  projectId: "mmcriminologia",
+  storageBucket: "mmcriminologia.firebasestorage.app",
+  messagingSenderId: "738693788238",
+  appId: "1:738693788238:web:d37ce10...", // Copia também o appId completo que aparece na tua tela
+}; // <-- coloca aqui o teu appId COMPLETO
+
+// --------------------------------------------------------------------------
+// 2. INICIALIZAÇÃO
+// --------------------------------------------------------------------------
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const COLECAO_RANKING = "ranking_agentes";
+// --------------------------------------------------------------------------
+// 3. GRAVAR / ATUALIZAR A PONTUAÇÃO DE UM AGENTE
+//    Chamado por app.js (função atualizarProgresso) sempre que uma
+//    disciplina é concluída.
+// --------------------------------------------------------------------------
+async function firebaseAtualizarProgresso(
+  id,
+  nome,
+  pontosGanhos,
+  cadeiraConcluida,
+) {
+  try {
+    const refAgente = doc(db, COLECAO_RANKING, String(id));
+
+    // setDoc com merge: true cria o documento se não existir ou atualiza se existir
+    await setDoc(
+      refAgente,
+      {
+        id: String(id),
+        nome: nome,
+        pontos: increment(pontosGanhos),
+        cadeiras: arrayUnion(cadeiraConcluida),
+        atualizadoEm: serverTimestamp(),
+      },
+      { merge: true },
+    );
+  } catch (erro) {
+    console.error("Erro ao gravar pontuação no Firebase:", erro);
+  }
+}
+// --------------------------------------------------------------------------
+// 4. OUVIR O RANKING EM TEMPO REAL
+//    Chamado por app.js na página pontuacoes.html. Sempre que qualquer
+//    agente, em qualquer telemóvel/computador, ganhar pontos, esta
+//    função dispara de novo automaticamente com a lista atualizada.
+// --------------------------------------------------------------------------
+function firebaseEscutarRanking(aoAtualizar) {
+  return onSnapshot(
+    collection(db, COLECAO_RANKING),
+    (snapshot) => {
+      const lista = snapshot.docs.map((docSnap) => docSnap.data());
+      aoAtualizar(lista);
+    },
+    (erro) => {
+      console.error("Erro ao ouvir o ranking do Firebase:", erro);
+    },
+  );
+}
+// --------------------------------------------------------------------------
+// 5. EXPOR AS FUNÇÕES AO app.js
+//    app.js é um script clássico (não é módulo), por isso não pode usar
+//    "import" — em vez disso, chama estas funções através de "window".
+// --------------------------------------------------------------------------
+window.firebaseAtualizarProgresso = firebaseAtualizarProgresso;
+window.firebaseEscutarRanking = firebaseEscutarRanking;
+
+console.log(
+  "🔥 Firebase ligado — a tabela de pontuações vai sincronizar entre dispositivos.",
+);
