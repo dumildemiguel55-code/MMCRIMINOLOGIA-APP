@@ -1502,13 +1502,11 @@ tr:nth-child(1) .posicao {
     font-weight: bold;
     font-size: 18px;
 }
-
 tr:nth-child(2) .posicao {
     color: #94a3b8;
     font-weight: bold;
     font-size: 16px;
 }
-
 tr:nth-child(3) .posicao {
     color: #b45309;
     font-weight: bold;
@@ -1539,4 +1537,32 @@ tr:nth-child(3) .posicao {
     padding: 3px 7px;
     border-radius: 4px;
     color: #e2e8f0;
+}/* Responsividade para o Header em telemóveis */
+@media (max-width: 600px) {
+    .app-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 0.8rem 1rem;
+    }
+
+    .user-stats-bar {
+        width: 100%;
+        justify-content: center;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    .stat-badge {
+        flex: 1 1 calc(50% - 0.5rem); /* Distribui em grelha 2x2 em telas pequenas */
+        padding: 0.3rem 0.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.6rem;
+    }
+
+    .stat-value {
+        font-size: 1rem;
+    }
 }
