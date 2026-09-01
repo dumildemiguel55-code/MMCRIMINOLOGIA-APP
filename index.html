@@ -24,67 +24,78 @@
 
     <!-- Formulário com Nome e E-mail -->
     <section class="card-login">
-      <!-- Formulário com Nome e E-mail -->
-  <h3>Identificação do Agente</h3>
-  <form id="form-login">
-    
-    <!-- Campo Nome -->
-    <div class="input-group">
-      <label for="nome-usuario">Nome completo ou ID de Agente:</label>
-      <input type="text" id="nome-usuario" placeholder="Ex: Criminólogo Silva" required autocomplete="name">
-    </div>
+      <h3>Identificação do Agente</h3>
+      <form id="form-login">
+        
+        <!-- Campo Nome -->
+        <div class="input-group">
+          <label for="nome-usuario">Nome completo ou ID de Agente:</label>
+          <input type="text" id="nome-usuario" placeholder="Ex: Criminólogo Silva" required autocomplete="name">
+        </div>
 
-    <!-- Campo E-mail -->
-    <div class="input-group">
-      <label for="email-usuario">E-mail corporativo ou pessoal:</label>
-      <input type="email" id="email-usuario" placeholder="agente@criminologia.com" required autocomplete="email">
-    </div>
+        <!-- Campo E-mail -->
+        <div class="input-group">
+          <label for="email-usuario">E-mail corporativo ou pessoal:</label>
+          <input type="email" id="email-usuario" placeholder="agente@criminologia.com" required autocomplete="email">
+        </div>
 
-    <!-- BOTÃO DE SUBMISSÃO OBRIGATÓRIA -->
-    <button type="submit" id="btn-enter-training" class="btn-primary btn-start-training">
-      BORA TREINAR? ➔
-    </button>
-  </form>
-
-
-    </div>
+        <!-- BOTÃO DE SUBMISSÃO OBRIGATÓRIA -->
+        <button type="submit" id="btn-enter-training" class="btn-primary btn-start-training">
+          BORA TREINAR? ➔
+        </button>
       </form>
     </section>
 
-    <!-- Áreas de Estudo -->
+    <!-- Áreas de Estudo (Transformadas em Links Operacionais) -->
     <section class="secao-areas">
       <h3>Áreas de Atuação e Estudo</h3>
       <div class="grid-areas">
-        <article class="card-area">
-          <img src="b1e9c7dc8ca18f2f5465b4d4fb0177f0.jpg" alt="Tribunal Constitucional" class="img-area">
-          <div class="conteudo-area">
-            <h4>tribunalconstitucional.ao</h4>
-            <p>A Justiça Constitucional ao serviço da democracia, do Estado de Direito e da cidadania..</p>
-          </div>
-        </article>
+        
+        <!-- Cartão 1: Tribunal Constitucional -->
+        <a href="https://tribunalconstitucional.ao" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+          <article class="card-area">
+            <img src="b1e9c7dc8ca18f2f5465b4d4fb0177f0/logo.jpg" alt="Tribunal Constitucional" class="img-area">
+            <div class="conteudo-area">
+              <h4>tribunalconstitucional.ao 🔗</h4>
+              <p>A Justiça Constitucional ao serviço da democracia, do Estado de Direito e da cidadania.</p>
+            </div>
+          </article>
+        </a>
 
-        <article class="card-area">
-          <img src="03ba31a3c34e1afe7e59c1985fb30a50.jpg" alt="LIVRARIAON" class="img-area">
-          <div class="conteudo-area">
-            <h4>scholar.google.com</h4>
-            <p>Baixe artigos e pesquisas sobre ciências </p>
-          </div>
-        </article>
-        <article class="card-area">
-          <img src="railway-station_1500x644.webp" alt="United Nations Office on Drugs and Crime" class="img-area">
-          <div class="conteudo-area">
-            <h4>United Nations Officeon Drugs and Crime</h4>
-            <p>As apreensões de armas automáticas aumentaram mais de quinze vezes em 2024 </p>
-          </div>
-        </article>
+        <!-- Cartão 2: Google Académico -->
+        <a href="https://scholar.google.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+          <article class="card-area">
+            <img src="b1e9c7dc8ca18f2f5465b4d4fb0177f0.jpg" alt="Google Scholar" class="img-area">
+            <div class="conteudo-area">
+              <h4>scholar.google.com 🔗</h4>
+              <p>Baixe artigos e pesquisas sobre ciências criminais e segurança.</p>
+            </div>
+          </article>
+        </a>
+
+        <!-- Cartão 3: UNODC -->
+        <a href="https://www.unodc.org" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+          <article class="card-area">
+            <img src="railway-station_1500x644.webp.jpg" alt="United Nations Office on Drugs and Crime" class="img-area">
+            <div class="conteudo-area">
+              <h4>UNODC - Nações Unidas 🔗</h4>
+              <p>Relatórios Globais sobre Drogas, Crime Organizado e Prevenção Criminológica.</p>
+            </div>
+          </article>
+        </a>
+
       </div>
     </section>
 
+    <!-- Botão de Sugestão -->
+    <div style="margin-top: 2rem; text-align: center;">
+      <a href="sugestoes.html" class="btn-primary" style="display: inline-block; text-decoration: none; text-align: center; width: 100%; max-width: 320px;">
+        💡 Deixar uma Sugestão
+      </a>
+    </div>
+
   </main>
-<!-- Cole este link onde desejar na página principal -->
-<a href="sugestoes.html" class="btn-primary" style="display: inline-block; text-decoration: none; text-align: center;">
-  💡 Deixar uma Sugestão
-</a>
+
   <script src="app.js"></script>
 </body>
 </html>
