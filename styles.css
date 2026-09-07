@@ -1608,3 +1608,30 @@ body:has(.app-header) {
         font-size: 1.15rem;
     }
 }
+
+.app-header-container {
+  text-align: center;
+  padding: 20px 10px;
+  background-color: #1a252f;
+  color: #ffffff;
+}
+
+.app-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.developers-section {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.developer-info {
+  background-color: #f8f9fa;
+  border-left: 4px solid #0056b3;
+  padding: 15px 20px;
+  border-radius: 4px;
+}
