@@ -7,11 +7,6 @@
         do Firestore (chamado por app.js -> atualizarProgresso()).
      2) Ouvir essa coleção em tempo real e avisar a página de Pontuações
         sempre que houver uma alteração — vinda de QUALQUER dispositivo.
-
-   IMPORTANTE: substitui os valores abaixo pelos dados reais do teu
-   projeto Firebase (Consola Firebase > Definições do Projeto > Geral >
-   As tuas apps > Configuração do SDK). Os valores "AIzaSy..." e
-   "abcdef..." são exemplos truncados — não vão funcionar como estão.
    ========================================================================== */
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
@@ -24,20 +19,19 @@ import {
   increment,
   arrayUnion,
   serverTimestamp,
-} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";;
+} from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
 // --------------------------------------------------------------------------
-// 1. CONFIGURAÇÃO DO TEU PROJETO FIREBASE
-//    (substitui pelos valores completos e reais do teu projeto)
+// 1. CONFIGURAÇÃO DO PROJETO FIREBASE (mmcriminologia)
 // --------------------------------------------------------------------------
 const firebaseConfig = {
-  apiKey: "AIzaSyCEEavcnz...", // Substitui este trecho com o valor completo exato da tua tela
+  apiKey: "AIzaSyA8wKOVv2OpBWAJeGxt4vwGaGAgeWndFVM",
   authDomain: "mmcriminologia.firebaseapp.com",
   projectId: "mmcriminologia",
   storageBucket: "mmcriminologia.firebasestorage.app",
   messagingSenderId: "738693788238",
-  appId: "1:738693788238:web:d37ce10...", // Copia também o appId completo que aparece na tua tela
-}; // <-- coloca aqui o teu appId COMPLETO
+  appId: "1:738693788238:web:d37ce10ee31f12402b091f",
+};
 
 // --------------------------------------------------------------------------
 // 2. INICIALIZAÇÃO
@@ -105,3 +99,4 @@ window.firebaseEscutarRanking = firebaseEscutarRanking;
 console.log(
   "🔥 Firebase ligado — a tabela de pontuações vai sincronizar entre dispositivos.",
 );
+
