@@ -830,7 +830,7 @@ body {
 
 /* Estilização da Imagem do Logo */
 .app-logo {
-    width: 104px;
+    width: 72px;
     max-width: 100%;
     height: auto;
     object-fit: contain;
@@ -1011,7 +1011,7 @@ body {
 /* RESPONSIVIDADE PARA DISPOSITIVOS MÓVEIS */
 @media (max-width: 400px) {
     .app-logo {
-        width: 80px;
+        width: 64px;
     }
 
     .header-boas-vindas h2 {
