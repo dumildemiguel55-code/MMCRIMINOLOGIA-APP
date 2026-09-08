@@ -1,10 +1,14 @@
-const CACHE_NAME = "m-criminologia-v1";
+const CACHE_NAME = "m-criminologia-v3";
 const ASSETS = [
   "./",
   "./index.html",
-  "./style.css",
-  "./script.js",
-  "./questions.json",
+  "./treino.html",
+  "./admin.html",
+  "./pontuacoes.html",
+  "./sugestoes.html",
+  "./styles.css",
+  "./app.js",
+  "./firebase-config.js",
   "./manifest.json",
   "./icon-192.png",
   "./icon-512.png",
@@ -29,15 +33,18 @@ self.addEventListener("install", (event) => {
   self.skipWaiting();
 });
 
-self.addEventListener("fetch", (event) => {
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      return cachedResponse || fetch(event.request);
-    }),
-  );
-});
-// Ativação do Service Worker sem apagar caches antigos
+// Ativação do Service Worker: remove caches antigos (v1, etc.) e assume o controle
 self.addEventListener("activate", (event) => {
-  // Assume o controle das páginas imediatamente
-  event.waitUntil(self.clients.claim());
+  event.waitUntil(
+    caches
+      .keys()
+      .then((nomes) => {
+        return Promise.all(
+          nomes
+            .filter((nome) => nome !== CACHE_NAME)
+            .map((nome) => caches.delete(nome)),
+        );
+      })
+      .then(() => self.clients.claim()),
+  );
 });
