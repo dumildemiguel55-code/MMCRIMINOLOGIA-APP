@@ -1,24 +1,22 @@
 {
   "project_info": {
     "project_number": "153650886107",
-    "project_id": "MMCRIMINOLOGIA",
-    "storage_bucket": "MMCRIMINOLOGIA.firebasestorage.app"
+    "project_id": "mmcriminologia",
+    "storage_bucket": "mmcriminologia.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
         "mobilesdk_app_id": "1:153650886107:android:b4e78416bc6415217fa3fe",
         "android_client_info": {
-          "package_name": "app.MMCRIMINOLOGIA"
+          "package_name": "app.mmcriminologia"
         }
       },
       "oauth_client": [],
       "api_key": [
-       "api_key": [
         {
-          "current_key":"AIzaSyA8wKOVv2OpBWAJeGxt4vwGaGAgeWndFVM"
+          "current_key": "AIzaSyA8wKOVv2OpBWAJeGxt4vwGaGAgeWndFVM"
         }
-      ],
       ],
       "services": {
         "appinvite_service": {
@@ -35,8 +33,8 @@
       },
       "oauth_client": [],
       "api_key": [
-         {
-          "current_key":"AIzaSyA8wKOVv2OpBWAJeGxt4vwGaGAgeWndFVM"
+        {
+          "current_key": "AIzaSyA8wKOVv2OpBWAJeGxt4vwGaGAgeWndFVM"
         }
       ],
       "services": {
