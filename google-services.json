@@ -1,15 +1,15 @@
 {
   "project_info": {
     "project_number": "153650886107",
-    "project_id": "protectu-91688",
-    "storage_bucket": "protectu-91688.firebasestorage.app"
+    "project_id": "MMCRIMINOLOGIA",
+    "storage_bucket": "MMCRIMINOLOGIA.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
         "mobilesdk_app_id": "1:153650886107:android:b4e78416bc6415217fa3fe",
         "android_client_info": {
-          "package_name": "app.protecttu"
+          "package_name": "app.MMCRIMINOLOGIA"
         }
       },
       "oauth_client": [],
