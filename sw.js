@@ -1,4 +1,4 @@
-const CACHE_NAME = "m-criminologia-v3";
+const CACHE_NAME = "m-criminologia-v4";
 const ASSETS = [
   "./",
   "./index.html",
@@ -14,7 +14,7 @@ const ASSETS = [
   "./icon-512.png",
 ];
 
-// Intercepção de requisições: responde com o cache se estiver offline
+// IntercepÃ§Ã£o de requisiÃ§Ãµes: responde com o cache se estiver offline
 self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
@@ -33,7 +33,7 @@ self.addEventListener("install", (event) => {
   self.skipWaiting();
 });
 
-// Ativação do Service Worker: remove caches antigos (v1, etc.) e assume o controle
+// AtivaÃ§Ã£o do Service Worker: remove caches antigos (v1, etc.) e assume o controle
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches
