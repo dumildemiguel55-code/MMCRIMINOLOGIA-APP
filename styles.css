@@ -36,6 +36,20 @@ body {
     position: relative;
 }
 
+/* Classe de segurança: garante que a página de treino nunca herda o padding
+   ou a centragem definidos mais abaixo neste ficheiro para OUTRAS páginas
+   (login/boas-vindas). Uma classe tem mais prioridade que "body" sozinho,
+   por isso esta regra ganha sempre, independentemente da ordem no ficheiro. */
+body.pagina-treino {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
 /* Fundo Iluminado */
 .bg-glow {
     position: fixed;
@@ -56,10 +70,14 @@ body {
     justify-content: space-between;
     align-items: center;
     gap: 0.6rem;
+    width: 100%;
+    margin: 0;
     padding: 0.5rem 1rem;
     background: rgba(6, 8, 14, 0.85);
     border-bottom: 1px solid var(--silver-border);
+    border-radius: 0;
     backdrop-filter: blur(10px);
+    box-sizing: border-box;
 }
 
 .logo-container {
