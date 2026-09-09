@@ -24,7 +24,20 @@ let quizAtual = {
   timerInterval: null,
   dicaUsada: false,
 };
+// Cole isto no teu app.js (ou num <script> no início do body, antes do app.js)
 
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./sw.js");
+
+  // Quando um novo service worker assume o controlo (nova versão publicada),
+  // recarrega a página automaticamente para os utilizadores verem a atualização.
+  let jaRecarregou = false;
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    if (jaRecarregou) return;
+    jaRecarregou = true;
+    window.location.reload();
+  });
+}
 // Instância diferida do Contexto de Áudio
 let audioCtx = null;
 
